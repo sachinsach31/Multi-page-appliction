@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './Navbar';
+import {BrowserRouter,Route,Routes} from "react-router-dom";
+import Revanth from "./Revanth";
+import Sagar from "./Sagar";
+import Akash from "./Akash";
+import Home from "./Home";
+import "./App.css"
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <BrowserRouter>
+     <Navbar/>
+    <Routes>
+    <Route exact path ='/'  element ={<Home/>}/>
+    <Route exact path ='/Akash'  element ={<Akash/>}/>
+    <Route exact path ='/Revanth'  element ={<Revanth/>}/>
+    <Route exact path ='/Sagar'  element ={<Sagar/>}/>
+    </Routes>
+   </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
